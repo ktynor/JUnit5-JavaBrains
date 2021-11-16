@@ -3,6 +3,7 @@ package mathutils;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MathUtilsTest {
 
@@ -17,6 +18,26 @@ class MathUtilsTest {
     @Test
     void shouldComputeCircleArea() {
         MathUtils mathUtils = new MathUtils();
-        assertEquals(Math.PI * 100, mathUtils.computeCircleArea(10),"Should return circle area");
+        assertEquals(Math.PI * 100, mathUtils.computeCircleArea(10), "Should return circle area");
+    }
+
+    @Test
+    void subtract() {
+    }
+
+    @Test
+    void multiply() {
+    }
+
+    @Test
+    void divide() {
+    }
+
+    @Test
+    void shouldThrowArithmeticException() {
+        MathUtils mathUtils = new MathUtils();
+
+        assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), "divide by zero should throw ex.");
+
     }
 }
